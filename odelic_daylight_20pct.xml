@@ -1,12 +1,12 @@
-<macro name="odelic_living_on" icon="NUMBER_1">
+<macro name="odelic_living_daylight_20pct" icon="NUMBER_0">
   <assert-service description="ODELIC ESP32 bridge service" uuid="625dfc6f-36f7-4936-b726-de5014c7ef22">
     <assert-characteristic description="Allowlisted preset command" uuid="313e2b82-1941-4a1f-8265-8319a395a6cc">
       <property name="WRITE" requirement="MANDATORY"/>
     </assert-characteristic>
   </assert-service>
-  <write description="Send the official Living group all-on marker"
+  <write description="Set Living group to daylight 20 percent"
          service-uuid="625dfc6f-36f7-4936-b726-de5014c7ef22"
          characteristic-uuid="313e2b82-1941-4a1f-8265-8319a395a6cc"
-         value="01"
+         value="11"
          type="WRITE_REQUEST"/>
 </macro>
