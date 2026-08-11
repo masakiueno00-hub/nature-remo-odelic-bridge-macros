@@ -26,6 +26,36 @@ MAC address, or reusable ODELIC packet.
 | `odelic_nightlight.xml` | `12` | First-stage nightlight |
 | `odelic_off.xml` | `05` | Living group OFF |
 
+## Father room buttons
+
+| File | Bridge value | Result |
+| --- | --- | --- |
+| `odelic_father_warm_100pct.xml` | `30` | Warm endpoint, 100% brightness |
+| `odelic_father_warm_80pct.xml` | `31` | Warm endpoint, 80% brightness |
+| `odelic_father_warm_60pct.xml` | `32` | Warm endpoint, 60% brightness |
+| `odelic_father_warm_40pct.xml` | `33` | Warm endpoint, 40% brightness |
+| `odelic_father_neutral_100pct.xml` | `34` | Neutral midpoint, 100% brightness |
+| `odelic_father_neutral_80pct.xml` | `35` | Neutral midpoint, 80% brightness |
+| `odelic_father_neutral_60pct.xml` | `36` | Neutral midpoint, 60% brightness |
+| `odelic_father_neutral_40pct.xml` | `37` | Neutral midpoint, 40% brightness |
+| `odelic_father_nightlight.xml` | `38` | First-stage nightlight |
+| `odelic_father_off.xml` | `39` | Father room group OFF |
+
+## Children room buttons
+
+| File | Bridge value | Result |
+| --- | --- | --- |
+| `odelic_children_warm_100pct.xml` | `40` | Warm endpoint, 100% brightness |
+| `odelic_children_warm_80pct.xml` | `41` | Warm endpoint, 80% brightness |
+| `odelic_children_warm_60pct.xml` | `42` | Warm endpoint, 60% brightness |
+| `odelic_children_warm_40pct.xml` | `43` | Warm endpoint, 40% brightness |
+| `odelic_children_neutral_100pct.xml` | `44` | Neutral midpoint, 100% brightness |
+| `odelic_children_neutral_80pct.xml` | `45` | Neutral midpoint, 80% brightness |
+| `odelic_children_neutral_60pct.xml` | `46` | Neutral midpoint, 60% brightness |
+| `odelic_children_neutral_40pct.xml` | `47` | Neutral midpoint, 40% brightness |
+| `odelic_children_nightlight.xml` | `48` | First-stage nightlight |
+| `odelic_children_off.xml` | `49` | Children room group OFF |
+
 ## Optional legacy button
 
 `odelic_on.xml` sends bridge value `01`, the official all-on marker. It is
