@@ -1,0 +1,13 @@
+<macro name="odelic_loft_warm_80pct" icon="NUMBER_0">
+  <assert-service description="ODELIC ESP32 bridge service" uuid="625dfc6f-36f7-4936-b726-de5014c7ef22">
+    <assert-characteristic description="Allowlisted preset command" uuid="313e2b82-1941-4a1f-8265-8319a395a6cc">
+      <property name="WRITE" requirement="MANDATORY"/>
+    </assert-characteristic>
+  </assert-service>
+  <write description="Set Loft group to warm 80 percent"
+         service-uuid="625dfc6f-36f7-4936-b726-de5014c7ef22"
+         characteristic-uuid="313e2b82-1941-4a1f-8265-8319a395a6cc"
+         value="51"
+         type="WRITE_REQUEST"/>
+</macro>
+
