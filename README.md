@@ -79,9 +79,9 @@ read-only topology query.
 | `odelic_children_nightlight.xml` | `48` | First-stage nightlight |
 | `odelic_children_off.xml` | `49` | Children room group OFF |
 
-## Loft buttons
+## Loft buttons（登録する12個）
 
-These ten buttons address only raw group `07`, which the read-only live query
+These twelve buttons address only raw group `07`, which the read-only live query
 confirmed for all four OD361678BR downlights. The nightlight entry uses the
 official app's common-CCT warm low-output command, not the ceiling-light `C5`
 nightlight opcode.
@@ -98,10 +98,8 @@ nightlight opcode.
 | `odelic_loft_neutral_40pct.xml` | `57` | Neutral midpoint, 40% brightness |
 | `odelic_loft_nightlight.xml` | `58` | Official warm low-output nightlight equivalent |
 | `odelic_loft_off.xml` | `59` | Loft group OFF |
-| `odelic_loft_daylight_100pct.xml` | `5A` | Daylight endpoint, 100% brightness |
-| `odelic_loft_daylight_80pct.xml` | `5B` | Daylight endpoint, 80% brightness |
-| `odelic_loft_daylight_60pct.xml` | `5C` | Daylight endpoint, 60% brightness |
-| `odelic_loft_daylight_40pct.xml` | `5D` | Daylight endpoint, 40% brightness |
+| `odelic_loft_warm_20pct.xml` | `5E` | Warm endpoint, 20% brightness |
+| `odelic_loft_neutral_20pct.xml` | `5F` | Neutral midpoint, 20% brightness |
 
 ## Optional legacy button
 
