@@ -4,7 +4,10 @@ These public XML files contain only one-byte commands for the local ESP32
 bridge. They contain no ODELIC Lighting ID, authentication key, challenge,
 MAC address, or reusable ODELIC packet.
 
-## Main buttons
+## Living / dining ceiling-pair buttons
+
+These existing values now send two fixed individual-light (`C0`) events: first
+to Living 3, then to Living 2. They do not address Living 1 / みかまさや部屋.
 
 | File | Bridge value | Result |
 | --- | --- | --- |
@@ -24,7 +27,27 @@ MAC address, or reusable ODELIC packet.
 | `odelic_daylight_40pct.xml` | `10` | Daylight endpoint, 40% brightness |
 | `odelic_daylight_20pct.xml` | `11` | Daylight endpoint, 20% brightness |
 | `odelic_nightlight.xml` | `12` | First-stage nightlight |
-| `odelic_off.xml` | `05` | Living group OFF |
+| `odelic_off.xml` | `05` | Living/dining ceiling pair OFF |
+
+## みかまさや部屋 buttons（12個）
+
+These values address only the fixed Living 1 virtual address confirmed by the
+read-only topology query.
+
+| File | Bridge value | Result |
+| --- | --- | --- |
+| `odelic_mikamasaya_warm_100pct.xml` | `60` | Warm endpoint, 100% brightness |
+| `odelic_mikamasaya_warm_80pct.xml` | `61` | Warm endpoint, 80% brightness |
+| `odelic_mikamasaya_warm_60pct.xml` | `62` | Warm endpoint, 60% brightness |
+| `odelic_mikamasaya_warm_40pct.xml` | `63` | Warm endpoint, 40% brightness |
+| `odelic_mikamasaya_warm_20pct.xml` | `64` | Warm endpoint, 20% brightness |
+| `odelic_mikamasaya_neutral_100pct.xml` | `65` | Neutral midpoint, 100% brightness |
+| `odelic_mikamasaya_neutral_80pct.xml` | `66` | Neutral midpoint, 80% brightness |
+| `odelic_mikamasaya_neutral_60pct.xml` | `67` | Neutral midpoint, 60% brightness |
+| `odelic_mikamasaya_neutral_40pct.xml` | `68` | Neutral midpoint, 40% brightness |
+| `odelic_mikamasaya_neutral_20pct.xml` | `69` | Neutral midpoint, 20% brightness |
+| `odelic_mikamasaya_nightlight.xml` | `6F` | First-stage nightlight |
+| `odelic_mikamasaya_off.xml` | `70` | みかまさや部屋 OFF |
 
 ## Father room buttons
 
@@ -56,11 +79,35 @@ MAC address, or reusable ODELIC packet.
 | `odelic_children_nightlight.xml` | `48` | First-stage nightlight |
 | `odelic_children_off.xml` | `49` | Children room group OFF |
 
+## Loft buttons
+
+These ten buttons address only raw group `07`, which the read-only live query
+confirmed for all four OD361678BR downlights. The nightlight entry uses the
+official app's common-CCT warm low-output command, not the ceiling-light `C5`
+nightlight opcode.
+
+| File | Bridge value | Result |
+| --- | --- | --- |
+| `odelic_loft_warm_100pct.xml` | `50` | Warm endpoint, 100% brightness |
+| `odelic_loft_warm_80pct.xml` | `51` | Warm endpoint, 80% brightness |
+| `odelic_loft_warm_60pct.xml` | `52` | Warm endpoint, 60% brightness |
+| `odelic_loft_warm_40pct.xml` | `53` | Warm endpoint, 40% brightness |
+| `odelic_loft_neutral_100pct.xml` | `54` | Neutral midpoint, 100% brightness |
+| `odelic_loft_neutral_80pct.xml` | `55` | Neutral midpoint, 80% brightness |
+| `odelic_loft_neutral_60pct.xml` | `56` | Neutral midpoint, 60% brightness |
+| `odelic_loft_neutral_40pct.xml` | `57` | Neutral midpoint, 40% brightness |
+| `odelic_loft_nightlight.xml` | `58` | Official warm low-output nightlight equivalent |
+| `odelic_loft_off.xml` | `59` | Loft group OFF |
+| `odelic_loft_daylight_100pct.xml` | `5A` | Daylight endpoint, 100% brightness |
+| `odelic_loft_daylight_80pct.xml` | `5B` | Daylight endpoint, 80% brightness |
+| `odelic_loft_daylight_60pct.xml` | `5C` | Daylight endpoint, 60% brightness |
+| `odelic_loft_daylight_40pct.xml` | `5D` | Daylight endpoint, 40% brightness |
+
 ## Optional legacy button
 
-`odelic_on.xml` sends bridge value `01`, the official all-on marker. It is
-kept as an optional compatibility button and is not one of the 17 main
-fixed-state buttons above.
+`odelic_on.xml` is retained only as a historical file. Bridge value `01` is now
+rejected, because a group-01 broadcast would also operate みかまさや部屋. Do
+not register or use this legacy button.
 
 The bridge exposes service
 `625dfc6f-36f7-4936-b726-de5014c7ef22` and a Write With Response command
